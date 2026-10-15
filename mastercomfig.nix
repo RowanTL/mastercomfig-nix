@@ -313,7 +313,9 @@ let
   # Generated binds and crosshair settings first, then the user's own commands.
   appFiles = lib.filterAttrs (_: text: text != "")
     (lib.zipAttrsWith (_: lib.concatStrings) (
-      [ { "autoexec.cfg" = bindLines defaultBinds; } bindFiles ]
+      [ { "autoexec.cfg" = ''echo "Managed by mastercomfig-nix: https://github.com/RowanTL/mastercomfig-nix"'' + "\n"; }
+        { "autoexec.cfg" = bindLines defaultBinds; }
+        bindFiles ]
       ++ crosshairFiles
       ++ [ (lib.mapAttrs (_: text: lib.optionalString (text != "") (text + "\n")) userFiles) ]
     ));
