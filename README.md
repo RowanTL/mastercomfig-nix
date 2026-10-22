@@ -1,3 +1,7 @@
+# MOVED
+
+This has moved to [https://github.com/RowanTL/tf2-nix](https://github.com/RowanTL/tf2-nix)
+
 # Overview
 
 A home-manager module to declaratively manage [mastercomfig](https://github.com/mastercomfig/mastercomfig).
